@@ -63,9 +63,10 @@ public class PhotoFinder {
 
             System.out.println("Ссылки на альбомы " + cntr + " первых друзей:");
 
-            //while (cntr-- != 0) {
-                System.out.println(driver.findElement(By.className("ui_zoom_outer ui_zoom_added")).getAttribute("href"));
-            //}
+            while (cntr-- != 0) {
+                System.out.println(driver.findElement(By.xpath("//a[@aria-label=\"Увеличить\"]")).getAttribute("href"));
+                //driver.findElement(By.xpath("//a[@aria-label=\"Увеличить\"]")).getAttribute("href");
+            }
         }
 
     } // конец main()
