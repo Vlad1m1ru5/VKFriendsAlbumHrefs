@@ -61,11 +61,14 @@ public class PhotoFinder {
                 cntr = 5;
             }
 
+            ArrayList<WebElement> refs;
+
             System.out.println("Ссылки на альбомы " + cntr + " первых друзей:");
 
+            refs = driver.findElements(By.xpath("//img[@class='friends_photo_img']"));
+
             while (cntr-- != 0) {
-                System.out.println(driver.findElement(By.xpath("//a[@aria-label=\"Увеличить\"]")).getAttribute("href"));
-                //driver.findElement(By.xpath("//a[@aria-label=\"Увеличить\"]")).getAttribute("href");
+                System.out.println(refs.get(cntr).getAttribute("src"));
             }
         }
 
